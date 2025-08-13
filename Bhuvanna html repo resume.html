@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bhuvana - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            /* Enhanced animated background: multi-gradient, radial, sparkles */
+            background:
+                radial-gradient(circle at 15% 25%, #ffe4ec 0%, #ffd600 40%, transparent 70%),
+                radial-gradient(circle at 85% 80%, #b2f7ef 0%, #e91e63 40%, transparent 70%),
+                linear-gradient(120deg, #ffdde1 0%, #f8b6d2 20%, #b2f7ef 40%, #ffe4ec 70%, #ffd600 100%);
+            background-size: 250% 250%, 250% 250%, 400% 400%;
+            animation: gradientBG 14s ease-in-out infinite;
+            position: relative;
+            overflow-x: hidden;
+        }
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%, 100% 0%, 0% 50%;}
+            25% {background-position: 50% 100%, 0% 100%, 50% 100%;}
+            50% {background-position: 100% 50%, 50% 0%, 100% 50%;}
+            75% {background-position: 50% 0%, 100% 100%, 50% 0%;}
+            100% {background-position: 0% 50%, 100% 0%, 0% 50%;}
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            opacity: 0.18;
+            background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+            z-index: 0;
+        }
+        /* Animated floating bubbles */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.22;
+            z-index: 0;
+            animation: floatBubble 16s linear infinite;
+        }
+        .bubble1 { width: 120px; height: 120px; background: #e91e63; top: 10%; left: 5%; animation-delay: 0s;}
+        .bubble2 { width: 80px; height: 80px; background: #b2f7ef; top: 70%; left: 80%; animation-delay: 2s;}
+        .bubble3 { width: 60px; height: 60px; background: #ffd600; top: 40%; left: 90%; animation-delay: 4s;}
+        .bubble4 { width: 100px; height: 100px; background: #ffe4ec; top: 80%; left: 10%; animation-delay: 6s;}
+        .bubble5 { width: 70px; height: 70px; background: #e3f2fd; top: 20%; left: 75%; animation-delay: 8s;}
+        .bubble6 { width: 90px; height: 90px; background: #ff9800; top: 60%; left: 30%; animation-delay: 10s;}
+        .bubble7 { width: 50px; height: 50px; background: #8bc34a; top: 30%; left: 60%; animation-delay: 12s;}
+        @keyframes floatBubble {
+            0% {transform: translateY(0) scale(1);}
+            25% {transform: translateY(-40px) scale(1.1);}
+            50% {transform: translateY(-80px) scale(1);}
+            75% {transform: translateY(-40px) scale(0.9);}
+            100% {transform: translateY(0) scale(1);}
+        }
+        /* Sparkle animation */
+        .sparkle {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+            animation: sparkleAnim 2s infinite linear;
+        }
+        .sparkle1 { top: 18px; left: 90%; }
+        .sparkle2 { top: 90%; left: 30px; animation-delay: 1s;}
+        .sparkle3 { top: 60%; left: 95%; animation-delay: 0.5s;}
+        .sparkle4 { top: 50%; left: 50%; animation-delay: 1.5s;}
+        @keyframes sparkleAnim {
+            0% {opacity: 0; transform: scale(0.5) rotate(0deg);}
+            50% {opacity: 1; transform: scale(1.2) rotate(180deg);}
+            100% {opacity: 0; transform: scale(0.5) rotate(360deg);}
+        }
+        /* Shooting star animation */
+        .star {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            font-size: 2em;
+            opacity: 0.7;
+            animation: shootStar 7s linear infinite;
+            pointer-events: none;
+        }
+        .star1 { top: 5%; left: 10%; animation-delay: 0s;}
+        .star2 { top: 80%; left: 85%; animation-delay: 3s;}
+        .star3 { top: 30%; left: 20%; animation-delay: 2s;}
+        @keyframes shootStar {
+            0% {transform: translateX(0) scale(0.7); opacity: 0.7;}
+            20% {transform: translateX(80px) scale(1.2); opacity: 1;}
+            80% {transform: translateX(200px) scale(1); opacity: 0.7;}
+            100% {transform: translateX(0) scale(0.7); opacity: 0.7;}
+        }
+        .resume-container {
+            background: rgba(255,255,255,0.98);
+            max-width: 820px;
+            margin: 60px auto;
+            border-radius: 40px;
+            box-shadow: 0 16px 48px rgba(233,30,99,0.18), 0 2px 12px rgba(0,120,212,0.10);
+            padding: 60px 70px;
+            border: 8px double #e91e63;
+            position: relative;
+            z-index: 1;
+            animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes popIn {
+            0% {transform: scale(0.7) translateY(80px); opacity: 0;}
+            80% {transform: scale(1.05) translateY(-10px); opacity: 1;}
+            100% {transform: scale(1) translateY(0); opacity: 1;}
+        }
+        h1 {
+            color: #e91e63;
+            margin-bottom: 12px;
+            font-size: 3em;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 0 #fff, 0 0 12px #b2f7ef;
+            text-align: center;
+            font-family: 'Pacifico', cursive, 'Segoe UI', Arial;
+            animation: bounceIn 1.5s;
+            background: none;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+        }
+        @keyframes bounceIn {
+            0% {transform: scale(0.7);}
+            60% {transform: scale(1.2);}
+            100% {transform: scale(1);}
+        }
+        h2 {
+            margin-top: 38px;
+            margin-bottom: 16px;
+            font-size: 1.45em;
+            border-bottom: 2px dotted #ffe4ec;
+            padding-bottom: 8px;
+            text-shadow: 0 1px 0 #fff;
+            font-family: 'Segoe UI Semibold', Arial, sans-serif;
+        }
+        .contact-info {
+            margin-bottom: 32px;
+            color: #fff;
+            font-size: 1.18em;
+            background: linear-gradient(90deg, #e91e63 40%, #ffd600 100%);
+            padding: 18px 26px;
+            border-radius: 20px;
+            box-shadow: 0 2px 14px rgba(233,30,99,0.12);
+            text-align: center;
+            font-weight: 500;
+            border: 2px solid #8bc34a;
+            animation: fadeIn 1.5s;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        ul {
+            margin: 0;
+            padding-left: 28px;
+        }
+        .section {
+            margin-bottom: 36px;
+        }
+        .education-section {
+            background: linear-gradient(90deg, #b2f7ef 60%, #e3f2fd 100%);
+            border-left: 12px solid #0078d4;
+            padding: 18px 26px;
+            border-radius: 20px;
+            box-shadow: 0 2px 14px rgba(0,120,212,0.10);
+            position: relative;
+            animation: fadeInUp 1.2s;
+        }
+        .education-section h2 {
+            color: #0078d4;
+            border-bottom: 2px solid #b2f7ef;
+        }
+        .skills-section {
+            background: linear-gradient(90deg, #ffe4ec 60%, #f8b6d2 100%);
+            border-left: 12px solid #e91e63;
+            padding: 18px 26px;
+            border-radius: 20px;
+            box-shadow: 0 2px 14px rgba(233,30,99,0.10);
+            position: relative;
+            animation: fadeInUp 1.4s;
+        }
+        .skills-section h2 {
+            color: #e91e63;
+            border-bottom: 2px solid #ffe4ec;
+        }
+        .achievements {
+            background: linear-gradient(90deg, #e3f2fd 80%, #ffd600 100%);
+            border-left: 12px solid #ffd600;
+            padding: 18px 26px;
+            border-radius: 20px;
+            box-shadow: 0 2px 14px rgba(255,214,0,0.10);
+            position: relative;
+            animation: fadeInUp 1.6s;
+        }
+        .achievements h2 {
+            color: #ffd600;
+            border-bottom: 2px solid #ffe4ec;
+        }
+        @keyframes fadeInUp {
+            from {opacity: 0; transform: translateY(40px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        .skills-list li, .achievements ul li, .education-section ul li {
+            font-size: 1.12em;
+            margin-bottom: 8px;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        .skills-list li:hover, .achievements ul li:hover, .education-section ul li:hover {
+            background: #fffde7;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px #ffd60044;
+            animation: pulse 0.6s;
+        }
+        @keyframes pulse {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.08);}
+            100% {transform: scale(1);}
+        }
+        .achievements::after {
+            content: "🏆✨";
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 1.5em;
+            opacity: 0.7;
+            pointer-events: none;
+            animation: sparkleAnim 2s infinite linear;
+        }
+        .achievements::before {
+            content: "🌟";
+            position: absolute;
+            top: 12px;
+            left: 18px;
+            font-size: 1.5em;
+            opacity: 0.7;
+            pointer-events: none;
+            animation: bounceIn 2s infinite alternate;
+        }
+        .education-section::before {
+            content: "🎓";
+            position: absolute;
+            top: 12px;
+            left: 18px;
+            font-size: 1.5em;
+            opacity: 0.7;
+            pointer-events: none;
+            animation: bounceIn 2s infinite alternate;
+        }
+        .skills-section::before {
+            content: "💃";
+            position: absolute;
+            top: 12px;
+            left: 18px;
+            font-size: 1.5em;
+            opacity: 0.7;
+            pointer-events: none;
+            animation: bounceIn 2s infinite alternate;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 36px;
+            font-size: 1.5em;
+            color: #e91e63;
+            letter-spacing: 2px;
+            font-weight: bold;
+            animation: fadeIn 2s;
+            text-shadow: 0 1px 8px #ffd600, 0 0 4px #b2f7ef;
+        }
+        .divider {
+            width: 80px;
+            height: 6px;
+            background: linear-gradient(90deg, #e91e63, #ffd600, #8bc34a, #0078d4);
+            border-radius: 3px;
+            margin: 24px auto;
+            opacity: 0.8;
+            animation: fadeIn 1.8s;
+        }
+    </style>
+</head>
+<body>
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+    <div class="bubble bubble4"></div>
+    <div class="bubble bubble5"></div>
+    <div class="bubble bubble6"></div>
+    <div class="bubble bubble7"></div>
+    <div class="star star1">⭐</div>
+    <div class="star star2">⭐</div>
+    <div class="star star3">⭐</div>
+    <div class="sparkle sparkle1">✨</div>
+    <div class="sparkle sparkle2">✨</div>
+    <div class="sparkle sparkle3">✨</div>
+    <div class="sparkle sparkle4">✨</div>
+    <div class="resume-container">
+        <h1>Bhuvana</h1>
+        <div class="contact-info">
+            <strong>Phone:</strong> 7204207291 &nbsp; | &nbsp;
+            <strong>Location:</strong> Ashoka Nagar, Mangalore, India
+        </div>
+        <div class="divider"></div>
+        <div class="section education-section">
+            <h2>Education</h2>
+            <ul>
+                <li>12th Grade (Science Stream) - Completed</li>
+                <li>B.Tech (First Semester) - Yenepoya Institute Of Arts And Management, Jyothi, Balmatta (Currently pursuing)</li>
+            </ul>
+        </div>
+        <div class="divider"></div>
+        <div class="section skills-section">
+            <h2>Skills & Interests</h2>
+            <ul class="skills-list">
+                <li>Dancing</li>
+                <li>Science</li>
+                <li>Technology</li>
+                <li>Modeling</li>
+            </ul>
+        </div>
+        <div class="divider"></div>
+        <div class="section achievements">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Participated in MS.TEEN MANGALORE</li>
+                <li>Top 6 Finalist</li>
+                <li>Awarded the title of "Best Rampwalk"</li>
+            </ul>
+        </div>
+        <div class
