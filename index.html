@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bhuvana Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            /* Innovative technical animated background: grid, circuit, and SVG lines */
+            background:
+                linear-gradient(120deg, #232526 0%, #e91e63 60%, #ffd600 100%),
+                repeating-linear-gradient(0deg, #e91e6322 0px, #e91e6322 1px, transparent 1px, transparent 40px),
+                repeating-linear-gradient(90deg, #ffd60022 0px, #ffd60022 1px, transparent 1px, transparent 40px),
+                url('https://www.transparenttextures.com/patterns/circuit-board.png');
+            background-blend-mode: lighten, lighten, lighten, multiply;
+            background-size: 200% 200%, 40px 40px, 40px 40px, 400px 400px;
+            animation: gradientBG 18s ease-in-out infinite;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* SVG circuit lines overlay */
+        #svg-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.22;
+            animation: fadeIn 2s;
+        }
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%, 0 0, 0 0, 0 0;}
+            50% {background-position: 100% 50%, 0 0, 0 0, 200px 200px;}
+            100% {background-position: 0% 50%, 0 0, 0 0, 0 0;}
+        }
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.18;
+            z-index: 1;
+            animation: floatBubble 14s linear infinite;
+        }
+        .bubble1 { width: 120px; height: 120px; background: #e91e63; top: 10%; left: 5%; animation-delay: 0s;}
+        .bubble2 { width: 80px; height: 80px; background: #b2f7ef; top: 70%; left: 80%; animation-delay: 2s;}
+        .bubble3 { width: 60px; height: 60px; background: #ffd600; top: 40%; left: 90%; animation-delay: 4s;}
+        .bubble4 { width: 100px; height: 100px; background: #ffe4ec; top: 80%; left: 10%; animation-delay: 6s;}
+        .bubble5 { width: 70px; height: 70px; background: #e3f2fd; top: 20%; left: 75%; animation-delay: 8s;}
+        .bubble6 { width: 90px; height: 90px; background: #ff9800; top: 60%; left: 30%; animation-delay: 10s;}
+        .bubble7 { width: 50px; height: 50px; background: #8bc34a; top: 30%; left: 60%; animation-delay: 12s;}
+        @keyframes floatBubble {
+            0% {transform: translateY(0) scale(1);}
+            25% {transform: translateY(-40px) scale(1.1);}
+            50% {transform: translateY(-80px) scale(1);}
+            75% {transform: translateY(-40px) scale(0.9);}
+            100% {transform: translateY(0) scale(1);}
+        }
+        header {
+            background: #232526;
+            color: #ffd600;
+            padding: 24px 0 16px 0;
+            text-align: center;
+            font-size: 2.5em;
+            font-family: 'Pacifico', cursive, 'Segoe UI', Arial;
+            letter-spacing: 2px;
+            box-shadow: 0 2px 12px #e91e6344;
+            animation: fadeInDown 1.2s;
+            border-bottom: 4px solid #e91e63;
+            z-index: 2;
+            position: relative;
+        }
+        @keyframes fadeInDown {
+            from {opacity: 0; transform: translateY(-40px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            box-shadow: 0 2px 8px #ffd60044;
+            animation: fadeIn 1.5s;
+            z-index: 2;
+            position: relative;
+        }
+        nav a {
+            color: #e91e63;
+            text-decoration: none;
+            padding: 18px 32px;
+            font-size: 1.15em;
+            font-weight: 500;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            background: linear-gradient(90deg, #ffd600 60%, #e91e63 100%);
+            color: #fff;
+            border-radius: 8px 8px 0 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.97);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px #e91e6344;
+            padding: 40px 32px;
+            min-height: 400px;
+            animation: fadeInUp 1.2s;
+            position: relative;
+            z-index: 2;
+        }
+        @keyframes fadeInUp {
+            from {opacity: 0; transform: translateY(40px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        h2 {
+            color: #e91e63;
+            font-size: 2em;
+            margin-bottom: 18px;
+            font-family: 'Segoe UI Semibold', Arial, sans-serif;
+            animation: fadeIn 1.2s;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .footer {
+            text-align: center;
+            margin: 40px 0 0 0;
+            color: #888;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            animation: fadeIn 2s;
+            z-index: 2;
+            position: relative;
+        }
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            box-shadow: 0 2px 16px #e91e6344;
+            margin-top: 18px;
+            margin-bottom: 18px;
+            border: 4px solid #e91e63;
+            animation: popIn 1.5s;
+            object-fit: cover;
+            background: #fff;
+        }
+        @keyframes popIn {
+            0% {transform: scale(0.7); opacity: 0;}
+            80% {transform: scale(1.05); opacity: 1;}
+            100% {transform: scale(1); opacity: 1;}
+        }
+        ul {
+            padding-left: 24px;
+        }
+        ul li {
+            font-size: 1.15em;
+            margin-bottom: 10px;
+            color: #232526;
+            background: linear-gradient(90deg, #ffe4ec 60%, #ffd600 100%);
+            border-radius: 8px;
+            padding: 6px 12px;
+            box-shadow: 0 2px 8px #e91e6322;
+            transition: background 0.3s, color 0.3s;
+            animation: fadeIn 1.2s;
+        }
+        ul li:hover {
+            background: linear-gradient(90deg, #e91e63 60%, #ffd600 100%);
+            color: #fff;
+        }
+        .badge {
+            display: inline-block;
+            background: #ffd600;
+            color: #e91e63;
+            border-radius: 12px;
+            padding: 4px 14px;
+            margin: 4px 6px;
+            font-size: 1em;
+            font-weight: 500;
+            box-shadow: 0 2px 8px #ffd60044;
+            animation: fadeIn 1.5s;
+            border: 2px solid #e91e63;
+        }
+        /* Simple responsive */
+        @media (max-width: 700px) {
+            .container { padding: 18px 8px; }
+            nav a { padding: 12px 10px; font-size: 1em; }
+            header { font-size: 2em; }
+            .profile-pic { width: 120px; height: 120px; }
+            #svg-bg { display: none; }
+        }
+    </style>
+    <script>
+        // SPA navigation logic
+        document.addEventListener("DOMContentLoaded", function() {
+            const pages = {
+                home: `
+                    <h2>Welcome</h2>
+                    <p>Hello! I'm <span style="color:#e91e63;font-weight:bold;">Bhuvana</span>. Welcome to my portfolio. Explore my journey, skills, projects, and more!</p>
+                    <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Profile" class="profile-pic">
+                `,
+                about: `
+                    <h2>About Me</h2>
+                    <p>
+                        I am a first year <span style="color:#e91e63;">B.Tech AIML</span> student at <span style="color:#e91e63;">Yenepoya Institute Of Arts And Management</span>.<br>
+                        Dance is my hobby and I am a trained <span style="color:#e91e63;">Bharathanatyam dancer</span>, having trained for <span style="color:#e91e63;">10 years</span>.<br>
+                        I love singing, science, coding and technology.<br>
+                        <strong>Location:</strong> Ashoka Nagar, Mangalore, India<br>
+                        <strong>Phone:</strong> 7204207291
+                    </p>
+                `,
+                skills: `
+                    <h2>Skills & Interests</h2>
+                    <ul>
+                        <li>Dancing 💃</li>
+                        <li>Coding 👩‍💻</li>
+                        <li>Science 🔬</li>
+                        <li>Technology 💻</li>
+                        <li>Modeling 👗</li>
+                        <li>Singing 🎤</li>
+                    </ul>
+                `,
+                projects: `
+                    <h2>Projects</h2>
+                    <ul>
+                        <li><strong>Personal Resume Website:</strong> Designed and coded my own animated resume.</li>
+                        <li><strong>Science Fair Model:</strong> Presented a working science model at school exhibition.</li>
+                        <li><strong>Dance Performances:</strong> Choreographed and performed at college events.</li>
+                    </ul>
+                `,
+                achievements: `
+                    <h2>Achievements</h2>
+                    <ul>
+                        <li>Performed in Mysuru Palace during Dasara after winning a dance competition</li>
+                        <li>Earned <span class="badge">Practitioner</span> and <span class="badge">Co-Creator</span> badges in IBM Design Thinking</li>
+                        <li>Participated in MS.TEEN MANGALORE</li>
+                        <li>Top 6 Finalist</li>
+                        <li>Awarded the title of Best Rampwalk</li>
+                    </ul>
+                `,
+                contact: `
+                    <h2>Contact</h2>
+                    <p>
+                        <strong>Email:</strong> <span style="color:#e91e63;">shreepadskoti@gmail.com</span><br>
+                        <strong>Phone:</strong> <span style="color:#e91e63;">7204207291</span><br>
+                        <strong>Instagram:</strong> <a href="https://instagram.com/bhuv.ii_" target="_blank" style="color:#e91e63;">@bhuv.ii_</a>
+                    </p>
+                `
+            };
+            function setPage(page) {
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page + '-nav').classList.add('active');
+                document.getElementById('main-content').innerHTML = pages[page];
+            }
+            // Default page
+            setPage('home');
+            // Navigation click
+            document.querySelectorAll('nav a').forEach(a => {
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    setPage(this.dataset.page);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- SVG circuit lines overlay for technical effect -->
+    <svg id="svg-bg" width="100vw" height="100vh" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="100,100 300,200 500,100 700,300 900,200" stroke="#e91e63" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <polyline points="200,400 400,500 600,400 800,600 1000,500" stroke="#ffd600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <polyline points="300,700 500,800 700,700 900,900 1100,800" stroke="#b2f7ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <circle cx="700" cy="300" r="12" fill="#e91e63" />
+        <circle cx="800" cy="600" r="10" fill="#ffd600" />
+        <circle cx="900" cy="900" r="8" fill="#b2f7ef" />
+        <rect x="500" y="100" width="16" height="16" fill="#e91e63" rx="4"/>
+        <rect x="600" y="400" width="14" height="14" fill="#ffd600" rx="3"/>
+        <rect x="700" y="700" width="12" height="12" fill="#b2f7ef" rx="2"/>
+    </svg>
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+    <div class="bubble bubble4"></div>
+    <div class="bubble bubble5"></div>
+    <div class="bubble bubble6"></div>
+    <div class="bubble bubble7"></div>
+    <header>Bhuvana's Portfolio</header>
+    <nav>
+        <a href="#" id="home-nav" data-page="home">Home</a>
+        <a href="#" id="about-nav" data-page="about">About</a>
+        <a href="#" id="skills-nav" data-page="skills">Skills</a>
+        <a href="#" id="projects-nav" data-page="projects">Projects</a>
+        <a href="#" id="achievements-nav" data-page="achievements">Achievements</a>
+        <a href="#" id="contact-nav" data-page="contact">Contact</a>
+    </nav>
+    <div class="container" id="main-content">
+        <!-- Content will be loaded here -->
+    </div>
+    <div class="footer">
+        Thank You for visiting my portfolio! 😊<br
